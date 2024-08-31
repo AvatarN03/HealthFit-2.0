@@ -1,0 +1,126 @@
+::placeholder {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+::selection {
+  background-color: #4caf50;
+  color: white;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  color: var(--tcc);
+  border-radius: 3rem;
+}
+
+span {
+  color: var(--tcc);
+  font-weight: bold;
+  font-size: 2.9rem;
+  transform: translate(30%, -50%);
+  display: block;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+  width: 100vw;
+  height: 80vh;
+  background: var(--bg);
+}
+
+.flex form {
+  flex: 1 1 50%;
+  padding: auto;
+  width: 100%;
+
+  background: rgba(38, 92, 38, 0.788);
+  padding: 2rem;
+  font-size: 2rem;
+  border-radius: 3rem;
+  border: 2px solid #eeeeee65;
+}
+
+dialog {
+  font-size: 1.5rem;
+  width: 50vw;
+  height: fit-content;
+  padding: 3rem;
+  margin: auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+  font-size: 2.2rem;
+  color: #4caf50;
+  text-transform: capitalize;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  appearance: none;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  width: 100%;
+  height: 20rem;
+  resize: none;
+}
+
+.form-group input[type="submit"] {
+  background: rgb(214, 110, 13);
+  font-size: 3rem;
+  color: #123;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.flex .image {
+  flex: 1 1 50%;
+  height: 100%;
+}
+
+.flex .image img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3rem;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 780px) {
+  .flex {
+    flex-direction: column-reverse;
+    height: fit-content;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .flex form {
+    flex: 1 1 85%;
+  }
+  .flex .image {
+    flex: 1 1 85%;
+    height: 50rem;
+  }
+
+  .flex .image img {
+    margin-left: 0;
+    height: 100%;
+  }
+}

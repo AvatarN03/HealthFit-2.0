@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HealthFit_2 - Med</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../css/med.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/utils.css">
+</head>
+
+<body>
+
+    <main>
+        <header class="navigation">
+            <div class="logo" id="logo">
+                <a href="../index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="biglotusflower">
+                        <path
+                            d="M64.3 39.383a1.364 1.364 0 0 1-1.347-1.157c-1.959-12.734-13.77-24-13.888-24.115a1.364 1.364 0 0 1 1.871-1.986c.513.484 12.61 12.012 14.714 25.687a1.366 1.366 0 0 1-1.142 1.556 1.466 1.466 0 0 1-.208.015Z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                        <path
+                            d="M35.7 39.383a1.49 1.49 0 0 1-.209-.015 1.365 1.365 0 0 1-1.141-1.556c2.1-13.675 14.2-25.2 14.714-25.687a1.364 1.364 0 0 1 1.871 1.986c-.119.112-11.93 11.381-13.888 24.115a1.364 1.364 0 0 1-1.347 1.157zm-8.967-3.732a1.365 1.365 0 0 1-1.342-1.127 32.631 32.631 0 0 1 .94-15.075 1.365 1.365 0 0 1 2.578.9 30.386 30.386 0 0 0-.832 13.7 1.363 1.363 0 0 1-1.105 1.581 1.389 1.389 0 0 1-.239.021z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                        <path
+                            d="M38.914 29.624a1.362 1.362 0 0 1-1.042-.483 30.355 30.355 0 0 0-10.746-7.972 1.364 1.364 0 0 1 .986-2.543 32.552 32.552 0 0 1 11.843 8.752 1.365 1.365 0 0 1-1.041 2.246zm34.353 6.027a1.4 1.4 0 0 1-.239-.022 1.365 1.365 0 0 1-1.105-1.582 30.4 30.4 0 0 0-.83-13.7 1.364 1.364 0 0 1 2.577-.9 32.629 32.629 0 0 1 .939 15.076 1.365 1.365 0 0 1-1.342 1.128z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                        <path
+                            d="M61.085 29.624a1.365 1.365 0 0 1-1.041-2.246 32.577 32.577 0 0 1 11.845-8.752 1.364 1.364 0 0 1 .988 2.543 30.349 30.349 0 0 0-10.751 7.972 1.361 1.361 0 0 1-1.041.483zM46.9 88.246c-32.475 0-35.529-32.6-36.555-43.546-.11-1.175-.194-2.1-.293-2.689-.907-5.428-4.195-7.28-4.335-7.355a1.366 1.366 0 0 1 .643-2.568H19.7a31.7 31.7 0 0 1 31.664 31.667v23.03a1.363 1.363 0 0 1-1.28 1.361c-1.084.068-2.153.1-3.184.1zm3.1-1.461zM9.877 34.817a14.566 14.566 0 0 1 2.869 6.744c.111.664.2 1.643.319 2.883 1.706 18.191 7.3 42.076 35.57 41.042V63.755A28.971 28.971 0 0 0 19.7 34.817z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                        <path
+                            d="M50 88.149a1.374 1.374 0 0 1-.357-.047c-11.564-3.115-17.756-19.7-21.407-31.9-5.6-18.717-21.4-21.3-22.075-21.4a1.364 1.364 0 0 1 .4-2.7c.181.026 18.178 2.893 24.29 23.322C34.315 67 40.1 82.707 50.355 85.467A1.365 1.365 0 0 1 50 88.149Z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                        <path
+                            d="M53.1 88.246q-1.545 0-3.181-.1a1.363 1.363 0 0 1-1.28-1.361v-23.03A31.7 31.7 0 0 1 80.3 32.088h13.336a1.364 1.364 0 0 1 .633 2.573c-.13.071-3.421 1.922-4.325 7.35-.1.592-.184 1.512-.293 2.685-1.026 10.941-4.083 43.55-36.551 43.55Zm-1.732-2.76c28.331 1.058 33.865-22.852 35.571-41.045.115-1.238.207-2.216.318-2.879a14.535 14.535 0 0 1 2.869-6.745H80.3a28.971 28.971 0 0 0-28.936 28.938Z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                        <path
+                            d="M50 88.149a1.365 1.365 0 0 1-.354-2.682C59.9 82.706 65.684 67 69.146 55.425 75.26 35 93.257 32.129 93.437 32.1a1.364 1.364 0 0 1 .4 2.7c-.67.1-16.477 2.688-22.076 21.405-3.649 12.2-9.84 28.779-21.406 31.9a1.379 1.379 0 0 1-.355.044Z"
+                            fill="#87ddfd" class="color000000 svgShape"></path>
+                    </svg>
+                    <p>HealthFit</p>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./yoga.html">Yoga</a></li>
+                    <li><a href="./mediation.html">Meditation</a></li>
+                    <li><a href="./about.html">AboutUs</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+
+        <section id="page1">
+            <div class="banner">
+                <img src="../assets/imgs/med2-bg.jpg" alt="" width="100%">
+            </div>
+            <div class="container">
+                <div class="left">
+                    <img src="../assets/imgs/nature.jpg" alt="Left Image">
+                </div>
+                <div class="right">
+                    <h1 class="heading">Welcome, HealthFit Meditation</h1>
+                    <h3 class="desc"> Calmness is the Utimate Key for Hapiness</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="page2">
+            <div class="search_bar">
+                <h2>Knowledge</h2>
+
+            </div>
+            <div class="details_container">
+                <div class="details">
+                    <h1 class="title">Hindu Meditation</h1>
+                    <div class="desc">
+                        <div class="left">
+                            Hinduism is a religion, or a way of life, found most notably in India and Nepal. With
+                            approximately one billion followers, Hinduism is the world’s third largest religion by
+                            population, and the majority religion in India, Nepal and Bali (Indonesia). Hinduism("The
+                            Eternal Law") has been called the “oldest religion” in the world.
+                        </div>
+                        <div class="right">
+                            <img src="https://images.unsplash.com/photo-1631879742133-a0dd6180abf9?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details">
+                    <h1 class="title">Mantra Meditation (OM Meditation)</h1>
+                    <div class="desc">
+                        <div class="left">
+                            A mantra is a syllable or word that is repeated for the purpose of focusing your mind.
+                            Its very important, due to the “vibration” associated to the sound and meaning, and that
+                            for this reason an initiation into it is essential.<br>
+                            Mantras are used in Hindu traditions, Buddhist traditions (especially Tibetan and “Pure
+                            Land” Buddhism), as well as in Jainism, Sikhism and Daoism (Taoism). Some people call
+                            mantra meditation “om meditation”, but that is just one of the mantras that can be used.
+                            A more devotion oriented practice of mantras is called japa, and consists of repeating
+                            sacred sounds (name of God) with love.
+                            <p>
+                                How to do it<br>
+
+                                As most type of meditations, it is usually practiced sitting with spine erect, and
+                                eyes closed. The practitioner then repeats the mantra in his mind, silently, over
+                                and over again during the whole session.
+                                Sometimes this practice is coupled with being aware of the breathing or coordinating
+                                with it.<br>
+                                As you repeat the mantra, it creates a mental vibration that allows the mind to
+                                experience deeper levels of awareness. As you meditate, the mantra becomes
+                                increasingly abstract and indistinct, until you’re finally led into the field of
+                                pure consciousness from which the vibration arose. Repetition of the mantra helps you disconnect from the thoughts filling your mind so that perhaps you may slip into the gap between thoughts.<br> <span>Mantras can be viewed as  ancient power words with subtle intentions that help us connect to spirit, the source of everything in the universe. </span>
+                            </p>
+                        </div>
+                        <div class="right">
+                            <img src="https://plus.unsplash.com/premium_photo-1666343788375-edff4d597b12?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                                " alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Transcendental Meditation (TM)</h1>
+                    <div class="desc">
+                        <div class="left">
+                            ranscendental Meditation is a specific form of Mantra Meditation introduced by Maharishi
+                            Mahesh Yogi in 1955 in India and the West.
+                            There is a lot of scientific research, sponsored by the organization, demonstrating the
+                            benefits of the practice.
+                            It is known that TM involves the use of a mantra and is practiced for 15–20 minutes twice
+                            per day while sitting with one’s eyes closed. The mantra is not unique, and is given to the
+                            practitioner based on his gender and age. The Mantro is are Tantric names of Hindu deities.
+                            Practice under intrustor and it's licensed.
+                        </div>
+                        <div class="right">
+                            <img src="https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                                    " alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Yoga Meditation </h1>
+                    <div class="desc">
+                        <div class="left">
+                            There is not one type of meditation which is “Yogic Meditation”. Yoga means “union”.
+                            Tradition goes as far as 1700 B.C, and has as its highest goal spiritual purification and
+                            Self-Knowledge. Classical Yoga divides the practice into rules of conduct ( yamas and
+                            niyamas ), physical postures ( asanas ), breathing exercises ( pranayama ), and
+                            contemplative practices of meditation ( pratyahara , dharana , dhyana , samadhi ).
+
+
+                            <div class="desc">
+                                <div class="left">
+                                    <h2>Third Eye Meditation</h2>
+                                    <p>Focusing the attention on the “spot between the eyebrows” (called by some “the
+                                        third eye” or “ ajna chakra” ) . The attention is constantly redirected to this
+                                        point, as a means to silence the mind. By time the “silent gaps” between
+                                        thoughts get wider and deeper. Sometimes this is accompanied by physically
+                                        “looking”, with eyes closed, towards that spot.</p>
+                                </div>
+                                <div class="right-img">
+                                    <img src="https://plus.unsplash.com/premium_photo-1689693057809-b0b34346465f?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+                                                    " alt="">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="desc">
+                                <div class="left">
+                                    <h2>Chakra Meditation</h2>
+                                    <p> The practitioner focuses on one of the seven chakras of the body (“centers of
+                                        energy”), typically doing some visualizations and chanting a specific mantra for each chakra ( lam , vam , ram , yam , ham , om ).
+                                    </p>
+                                </div>
+                                <div class="right-img">
+                                    <img src="https://images.unsplash.com/photo-1472494731104-3ba69e52845b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="desc">
+                                <div class="left">
+                                    <h2>Gazing Meditation (Trataka)</h2>
+                                    <p>Fixing the gaze on an external object, typically a candle, image or a symbol (
+                                        yantras ). It is done with eyes open, and then with eyes closed, to train both
+                                        the concentration and visualization powers of the mind. After closing the eyes, you should still keep the image of the object in your “mind’s eye”.</p>
+                                </div>
+                                <div class="right-img">
+                                    <img src="https://images.unsplash.com/photo-1528351655744-27cc30462816?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="desc">
+                                <div class="left">
+                                    <h2>Kundalini Meditation</h2>
+                                    <p>This is a very complex system of practice. The goal is the awakening of the
+                                        “kundalini energy” which lies dormant on the base of the spine, the development of several psychic centers in the body, and, finally, enlightenment. *There are several dangers associated with this practice, and it should not be attempted without the guidance of a qualified yogi.*</p>
+                                </div>
+                                <div class="right-img">
+                                    <img src="https://plus.unsplash.com/premium_photo-1672576783361-2bf09424d576?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Kriya Yoga</h1>
+                    <div class="desc">
+                        <div class="left">
+                            Its a set of energization, breathing, and meditation exercises taught by Paramahamsa
+                            Yogananda. This is more suited for those who have a devotional temperament, and are seeking the spiritual aspects of meditation.
+                        </div>
+                        <div class="right">
+                            <img src="https://imgs.search.brave.com/BascfSW4zUEOHxFfJJxHOiEIpcleV9tGmyuPsFszvU0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90ZW1w/bGVvZmtyaXlheW9n/YS5vcmcvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjIvMTAvbW9y/bmluZy1tZWRpdGF0/aW9uLTIwMjEtMDkt/MDItMDgtMDUtNDgt/dXRjLmpwZw"alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Sound Meditation (Nada Yoga)</h1>
+                    <div class="desc">
+                        <div class="left">
+                            Focusing on sound. Uising calming ambient music , whereby the person focuses all his
+                            attention on just hearing, as a help to quieten and collect the mind. By time the practice
+                            evolves to hearing the “internal sounds” of the body and mind. The ultimate goal is to hearthe “Ultimate Sound” ( para nada ), which is a sound without vibration, and that manifests as “OM”.
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Tantra</h1>
+                    <div class="desc">
+                        <div class="left">
+                            This is the popular view in the West, most Tantra practices have nothing to do with
+                            ritualized sex Its is practice by minority of lineages. Tantra is a very rich tradition. The text Vijnanabhairava Tantra , for instance, lists 108 “meditations”, most of them more
+                            advanced.
+                        </div>
+                        <div class="right">
+                            <img src="https://www.the-pool.com/wp-content/uploads/2021/03/hat-Is-Tantric-Yoga-720x339.jpg"alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Pranayama</h1>
+                    <div class="desc">
+                        <div class="left">
+                            Its Breathing regulation. It is not exactly meditation, but an excellent practice to calm
+                            the mind and prepare it for meditation. There are several different types of Pranayama. ex.<br> 4-4-4-4 i.e. breathing in counting up to 4, holding for 4 seconds, breathing out for 4 seconds, and holding empty for 4 seconds. Breathe through your nose, and let the abdomen (and not the chest) be the one that moves. This regulation of breathing balances the moods and pacifies the body, and can be done anywhere.
+                            <span>Yoga is a very rich tradition, with different lineages, so there are many other
+                                techniques. But the ones above are the most well-known; the others are more specific or complex.</span>
+                        </div>
+                        <div class="right">
+                            <img src="https://images.unsplash.com/photo-1508050249562-b28a87434496?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h1 class="title">Self-Enquiry and “I Am” Meditation</h1>
+                    <div class="desc">
+                        <div class="left">
+                            Self-Enquiry is "atma vichara". It means to “investigate” our true nature, to find the
+                            answer to the “Who am I?” It was expanded upon by the 20th-century Indian sage Ramana
+                            Maharshi (1879~1950).<br><br>
+                            The modern non-duality movement (or neo-advaita ), which is greatly inspired in his
+                            teachings – as well as those of Nisargadatta Maharaj (1897~1981) and Papaji – strongly uses this technique and variations.<br><br>
+
+                            How to do it<br>
+
+                            Your sense of “I” (or “ego”) is the center of your universe. It is there behind all your
+                            thoughts, emotions, memories, and perceptions. Yet we are not clear about what this “I” is –
+                            about who we truly are, in essence – and confuse it with our body, our mind, our roles, our
+                            labels. It’s the biggest mystery in our lives.<br>
+
+                            With Self-Enquiry, the question “Who I am?” is asked within yourself. Use this question
+                            simply as a tool to fix your attention in the subjective feeling of “I” or “I am”. Become
+                            one with it, go deep into it. This will then reveal your true “I”, your real self as pure
+                            consciousness, beyond all limitation. It is not an intellectual pursuit, but a question to
+                            bring the attention to the core element of your perception and experience: the “I”. This is
+                            not your personality, but a pure, subjective, feeling of existing – without any images or
+                            concepts attached to it.<br>
+                            Whenever thoughts/feelings arise, you ask yourself, “To whom does this arise?” or “Who is
+                            aware of _____ (anger, fear, pain, or whatever)?” The answer will be “It’s me!”. From then
+                            you ask “Who am I?”, to bring the attention back to the subjective feeling of self, of
+                            presence. It is pure existence, objectless and choice-less awareness.
+                        </div>
+                        <div class="right">
+                            <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="logo">
+                <h1><a href="../index.html">HealthFit</a></h1>
+                <button><a href="./contact.html">Connect</a></button>
+            </div>
+            <div class="box">
+                <address>
+                    <h4>Address:</h4>
+                    <p>123 Main St.</p>
+                    <p>City, State, ZIP</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@healthfit.com</p>
+                </address>
+                <div class="links">
+                    <h4>Quick Links</h4>
+                    <a href="../index.html">Home</a>
+                    <a href="./about.html">About Us</a>
+                    <a href="./contact.html">Contact</a>
+                    <a href="./yoga.html">Yoga</a>
+                    <a href="#logo">Meditation</a>
+                </div>
+                <div class="social">
+                    <h4>Social Media</h4>
+                    <div class="">
+                        <a href="../pages/error.html"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/jsprashanth003?t=xM3dE7050DC5_ph7nswZ1g&s=08"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/js.prashanth/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@holeinsingularity03"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/prashanth-naidu-8049b8227/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">
+                <a href="#logo"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../js/med.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/page.js"></script>
+
+</body>
+</html>
