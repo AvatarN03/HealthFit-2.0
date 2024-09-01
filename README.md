@@ -1,5 +1,4 @@
-# HEALTHFIT
-![HealthFit_2.0](https://github.com/user-attachments/assets/c1d0cc47-aae4-44ec-91f1-938216f3d7fc)
+# HEALTHFIT |  ![HealthFit_2.0](https://github.com/user-attachments/assets/c1d0cc47-aae4-44ec-91f1-938216f3d7fc)
 
 
 
@@ -32,10 +31,8 @@ This Project provides the images and their descriptions. (In Future i will imple
 
 ## Responsiveness
 
-![Meditation Page](https://github.com/user-attachments/assets/82b58160-ab49-44d4-b1e4-153956dbcf60)
-![Contact Page](https://github.com/user-attachments/assets/047f478c-2b4b-42cf-94ab-77a5ec5a59b6)
-
-
+![Meditation Page](https://github.com/user-attachments/assets/82b58160-ab49-44d4-b1e4-153956dbcf60) | ![Contact Page](https://github.com/user-attachments/assets/047f478c-2b4b-42cf-94ab-77a5ec5a59b6)
 
 
 ## ThankYou
+I hope you liked this Project , please to STAR it.
