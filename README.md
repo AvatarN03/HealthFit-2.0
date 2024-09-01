@@ -26,6 +26,8 @@ This Project provides the images and their descriptions. (In Future i will imple
 ![Home Page](https://github.com/user-attachments/assets/b2a5d452-7883-4711-ad91-9a8bdfa1ea1d)
 ![Home Features](https://github.com/user-attachments/assets/b2e730cb-6006-403e-b502-86c481ffb757)
 ![Loding Animation](https://github.com/user-attachments/assets/0d47d3e7-8285-486f-83ed-e6f99afc9bad)
+![Yoag Page](https://github.com/user-attachments/assets/db659d2a-a90f-4305-97b9-0daac164047a)
+
 ![BMI ](https://github.com/user-attachments/assets/4dc460fb-9497-405f-90df-9e5be6f90538)
 
 ## Responsiveness
