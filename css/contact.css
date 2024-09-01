@@ -27,8 +27,8 @@ span {
 .flex {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10rem;
+  align-items: flex-start;
+  padding: 2rem;
   width: 100vw;
   height: 80vh;
   background: var(--bg);
@@ -90,17 +90,18 @@ dialog {
 }
 
 .flex .image {
-  flex: 1 1 50%;
-  height: 100%;
+  flex: 0 0 35%;
+  height: 35%;
+  margin: 0 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0..5);
+  overflow: hidden;
 }
 
 .flex .image img {
-  margin: 0 auto;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 3rem;
-  margin-left: 2rem;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 780px) {

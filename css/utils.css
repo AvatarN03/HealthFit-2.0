@@ -264,13 +264,13 @@ footer {
   padding: 3rem;
   background: #122212;
   position: relative;
+  overflow-x: hidden;
 }
 
 footer .logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5rem;
   border-bottom: 1px solid pink;
   padding-bottom: 3rem;
 }
@@ -299,9 +299,9 @@ footer .box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
-  width: 99%;
+  width: 100%;
   font-size: 1.6rem;
-  gap: 2rem;
+  gap:1rem;
   margin: 2rem 0;
 }
 
@@ -311,21 +311,19 @@ footer .box > :not(:last-child) {
 
 footer .box address {
   line-height: 1.5;
-  font-size: 1.9rem;
 }
 
 footer .box address h4,
 footer .box .links h4,
 footer .box .social h4 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 footer .box .links {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+
 }
 
 footer .box .social {
@@ -378,6 +376,10 @@ footer .arrow a i {
   html {
     font-size: 65%;
   }
+  .navigation .nav::-webkit-scrollbar {
+    height: 5px;
+    color: #eee;
+  }
 
   .navigation .nav {
     position: absolute;
@@ -386,6 +388,7 @@ footer .arrow a i {
     right: 0;
     background: linear-gradient(to right bottom, rgb(0, 128, 79) , teal);
     clip-path: polygon(0 0, 0 50%, 0 100%, 0 61%, 0 47%, 0 29%);
+    overflow-x: scroll;
 
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
