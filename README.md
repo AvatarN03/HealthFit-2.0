@@ -1,4 +1,5 @@
-# HEALTHFIT |  ![HealthFit_2.0](https://github.com/user-attachments/assets/c1d0cc47-aae4-44ec-91f1-938216f3d7fc)
+# HEALTHFIT |
+![HealthFit_2.0](https://github.com/user-attachments/assets/c1d0cc47-aae4-44ec-91f1-938216f3d7fc){ width=300, height=200 }
 
 
 
