@@ -1,0 +1,90 @@
+.container {
+  width: 100vw;
+  height: auto;
+  background: var(--light-bg);
+}
+
+.container h1 {
+  font-size: 5rem;
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.con-card {
+  padding: 1rem;
+  width: 70vw;
+  height: auto;
+  margin: 0 auto;
+  transition: 0.5s ease-in-out;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+.card .image{
+  width: 20rem;
+  aspect-ratio: 1;
+  border: 3px solid #eee;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card .image img{
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+}
+.card .overlay{
+  flex: 1 1 50rem;
+  position: relative;
+  font-size: 3rem;
+  background: rgba(0, 128, 128, 0.63);
+  padding: 2rem;
+  border-radius: 3rem 0 3rem 0;
+  border: 1.5px solid pink;
+}
+
+
+
+@media (max-width: 780px) {
+
+  .con-card{
+    flex-direction: column;
+    gap: 2rem;
+    width: 85vw;
+    
+  }
+
+  .card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .card img{
+    flex: 1 1 20rem;
+    border: 1px solid #eee;
+    border-radius: 50%;
+  }
+  .card .overlay{
+    flex: 1 1 50rem;
+    position: relative;
+    font-size: 1.9rem;
+  }
+  
+}
+
+
+@media (max-width: 580px) {
+  html{
+    font-size: 50%;
+  }
+
+  .overlay{
+    font-size: 1.3rem;
+  }
+}
