@@ -229,11 +229,11 @@
   text-align: center;
   gap: 2rem;
   margin: 8rem auto;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 #page3 .container .service-card {
-  width: 500px;
+  width: 40rem;
   height: 300px;
   box-shadow: 0 12px 15px rgba(0, 0, 0, 0.9);
   background: var(--light-bg);

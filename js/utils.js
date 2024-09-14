@@ -1,5 +1,6 @@
 const menu = document.querySelector(".menu-btn i");
 const navItems = document.querySelector(".navigation .nav");
+const rellax = new Rellax(".rellax");
 
 // const main = document.querySelector("#root");
 // const loader = document.querySelector(".loader");

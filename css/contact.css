@@ -32,6 +32,8 @@ span {
   width: 100vw;
   height: 80vh;
   background: var(--bg);
+  flex: 1;
+  overflow: auto;
 }
 
 .flex form {
