@@ -1,7 +1,13 @@
 # HEALTHFIT |
 ![HealthFit_2.0](https://github.com/user-attachments/assets/c1d0cc47-aae4-44ec-91f1-938216f3d7fc)
 
+## Installation
 
+To Install this project
+
+```bash
+git clone https://github.com/AvatarN03/HealthFit-2.0.git
+```
 
 # Project Title
 
@@ -21,6 +27,11 @@ This Project provides the images and their descriptions. (In Future i will imple
 
 
 
+
+
+
+## Thanks to the Yoga API Creator - [GitHub](https://github.com/alexcumplido)
+ 
 ## Screenshots
 
 ![Home Page](https://github.com/user-attachments/assets/b2a5d452-7883-4711-ad91-9a8bdfa1ea1d)
