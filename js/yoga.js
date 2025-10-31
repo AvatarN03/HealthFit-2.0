@@ -112,37 +112,81 @@ async function CardRender(obj) {
   // Clear the content container
   contentContainer.innerHTML = "";
   let poses = Array.isArray(obj) ? obj : [obj];
+  
   poses.forEach((pose) => {
+    // Create main card
     let card = document.createElement("div");
     card.classList.add("card");
 
+    // Create image container
+    let imageBox = document.createElement("div");
+    imageBox.classList.add("image_box");
+    
     let image = document.createElement("img");
-    image.classList.add("image_box");
     image.src = pose.url_svg;
-    image.alt = `${pose.english_name} pose image`;
+    image.alt = `${pose.english_name} and ${pose.sanskrit_name} poses`;
+    
+    imageBox.appendChild(image);
 
+    // Create text container
     let textContainer = document.createElement("div");
     textContainer.classList.add("text");
 
-    let head = document.createElement("h3");
-    head.innerHTML = `${pose.english_name} | ${pose.sanskrit_name}`;
+    // Create pose title
+    let poseTitle = document.createElement("h3");
+    poseTitle.classList.add("pose-title");
+    poseTitle.innerHTML = `${pose.english_name} | ${pose.sanskrit_name}`;
 
+    // Create pose description
     let poseDesc = document.createElement("p");
+    poseDesc.classList.add("pose-description");
     poseDesc.innerHTML = pose.pose_description;
 
-    let hr = document.createElement("hr");
+    // Create benefits section
+    let benefitsSection = document.createElement("div");
+    benefitsSection.classList.add("benefits-section");
 
-    let poseBenefits = document.createElement("p");
-    poseBenefits.innerHTML = `Pose Benefits: ${pose.pose_benefits}`;
+    let benefitsTitle = document.createElement("h4");
+    benefitsTitle.classList.add("benefits-title");
+    benefitsTitle.innerHTML = "Pose Benefits";
 
-    // Append elements to the text container
-    textContainer.appendChild(head);
+    let benefitsList = document.createElement("ul");
+    benefitsList.classList.add("benefits-list");
+
+    // Split benefits by period or comma and create list items
+    let benefits = pose.pose_benefits
+      .split(/[.,;]/)
+      .map(benefit => benefit.trim())
+      .filter(benefit => benefit.length > 0);
+
+    benefits.forEach(benefit => {
+      let listItem = document.createElement("li");
+      listItem.innerHTML = benefit;
+      benefitsList.appendChild(listItem);
+    });
+
+    // Append benefits elements
+    benefitsSection.appendChild(benefitsTitle);
+    benefitsSection.appendChild(benefitsList);
+
+    // Append all elements to text container
+    textContainer.appendChild(poseTitle);
     textContainer.appendChild(poseDesc);
-    textContainer.appendChild(hr);
-    textContainer.appendChild(poseBenefits);
-    card.appendChild(image);
+    textContainer.appendChild(benefitsSection);
+
+    // Append image box and text container to card
+    card.appendChild(imageBox);
     card.appendChild(textContainer);
 
+    // Append card to content container
     contentContainer.appendChild(card);
   });
 }
+
+function starter(){
+  fetch("https://yoga-api-nzy4.onrender.com/v1/poses")
+  fetch("https://yoga-api-nzy4.onrender.com/v1/poses")
+  fetch("https://yoga-api-nzy4.onrender.com/v1/poses")
+  fetch("https://yoga-api-nzy4.onrender.com/v1/poses")
+}
+starter()

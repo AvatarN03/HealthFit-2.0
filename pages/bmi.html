@@ -1,57 +1,130 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+	<meta charset="UTF-8">
 	<title>HealthFit - BMI Calculator</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="../css/bmi.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/bmi.css">
 </head>
+
 <body>
 	<div class="inner-home">
-		<video id="autoplay-video" autoplay muted loop>
+		<video id="autoplay-video" autoplay muted loop playsinline>
 			<source src="../assets/imgs/bmi-vid.mp4" type="video/mp4">
 		</video>
 	</div>
-	<!-- <div id="table">
-		<table>
-			<caption>BMI INDEX:</caption>
-			<tr>
-				<th>Underweight</th>
-				<th>Healthy</th>
-				<th>Overweight</th>
-				<th>Obese</th>
-			</tr>
-			<tr>
-				<td>Below 18.5</td>
-				<td>18.5 - 24.9</td>
-				<td>25.0 - 29.9 </td>
-				<td>30.0 and above</td>
 
-			</tr>
-		</table>
-	</div> -->
 	<div class="container">
 		<div class="home">
 			<a href="./yoga.html">YOGA</a>
 		</div>
+
 		<div class="panel">
-			<h2 class="text-center">Check your BMI</h2>
-			
-				<p id="introText" class="text-center">Enter your weight and height below to check your BMI results</p>
-				
+			<div class="">
+				<h2>Check your BMI</h2>
+				<p id="introText">Enter your weight and height below to check your BMI results</p>
+
 				<form>
 					<div id="weightInput">
-						<p>Put your weight in here (KG)</p>
-						 <input id="weight" type="number" pattern="[0-9]*" name="a" />
+						<p>Weight (KG)</p>
+						<input id="weight" type="number" pattern="[0-9]*" placeholder="e.g., 70" min="1" max="300"
+							required />
 					</div>
 					<div id="heightInput">
-						<p>And your height in here (CM)</p>
-						 <input id="height" type="number" pattern="[0-9]*" name="b"/> 
+						<p>Height (CM)</p>
+						<input id="height" type="number" pattern="[0-9]*" placeholder="e.g., 170" min="50" max="250"
+							required />
 					</div>
-				 <button type="button" class="btn" onclick="calculate()">Calculate BMI</button>
-			</form>
-			<div id="results" class="text-center">Your BMI results will appear here</div>
+					<button type="button" class="btn" onclick="calculate()">Calculate BMI</button>
+				</form>
+
+				<div id="results">Your BMI results will appear here</div>
+			</div>
+
+			<div class="bmi-table">
+				<h3>BMI Index Reference</h3>
+				<div class="bmi-ranges">
+					<div class="bmi-range underweight">
+						<h4>Underweight</h4>
+						<p>Below 18.5</p>
+					</div>
+					<div class="bmi-range healthy">
+						<h4>Healthy</h4>
+						<p>18.5 - 24.9</p>
+					</div>
+					<div class="bmi-range overweight">
+						<h4>Overweight</h4>
+						<p>25.0 - 29.9</p>
+					</div>
+					<div class="bmi-range obese">
+						<h4>Obese</h4>
+						<p>30.0 and above</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<script src="../js/bmi.js"></script>
+
+	<script>
+		function calculate() {
+			const weight = parseFloat(document.getElementById('weight').value);
+			const height = parseFloat(document.getElementById('height').value);
+			const resultsDiv = document.getElementById('results');
+
+			if (!weight || !height || weight <= 0 || height <= 0) {
+				resultsDiv.innerHTML = '⚠️ Please enter valid weight and height values';
+				resultsDiv.style.background = 'linear-gradient(135deg, #ffe8e8 0%, #ffd5d5 100%)';
+				resultsDiv.style.borderColor = '#e74c3c';
+				resultsDiv.style.color = '#c0392b';
+				return;
+			}
+
+			const heightInMeters = height / 100;
+			const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+
+			let category = '';
+			let color = '';
+			let advice = '';
+
+			if (bmi < 18.5) {
+				category = 'Underweight';
+				color = '#3498db';
+				advice = 'Consider consulting a nutritionist for a healthy weight gain plan.';
+			} else if (bmi >= 18.5 && bmi <= 24.9) {
+				category = 'Healthy Weight';
+				color = '#2ecc71';
+				advice = 'Great! Maintain your healthy lifestyle.';
+			} else if (bmi >= 25 && bmi <= 29.9) {
+				category = 'Overweight';
+				color = '#f39c12';
+				advice = 'Consider a balanced diet and regular exercise.';
+			} else {
+				category = 'Obese';
+				color = '#e74c3c';
+				advice = 'Consult a healthcare professional for personalized guidance.';
+			}
+
+			resultsDiv.innerHTML = `
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: ${color}; margin-bottom: 0.5rem;">${bmi}</div>
+                    <div style="font-size: 1.2rem; font-weight: 600; color: ${color}; margin-bottom: 0.5rem;">${category}</div>
+                    <div style="font-size: 0.95rem; color: #555;">${advice}</div>
+                </div>
+            `;
+			resultsDiv.style.background = 'linear-gradient(135deg, #e8f8f5 0%, #d5f4e6 100%)';
+			resultsDiv.style.borderColor = color;
+			resultsDiv.classList.add('show');
+		}
+
+		// Allow Enter key to calculate
+		document.addEventListener('keypress', function (e) {
+			if (e.key === 'Enter') {
+				calculate();
+			}
+		});
+	</script>
 </body>
+
 </html>

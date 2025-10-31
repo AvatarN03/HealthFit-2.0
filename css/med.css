@@ -273,5 +273,8 @@ hr{
   #page2 .details_container .details .title {
     font-size: 3rem;
   }
+  span{
+    font-size: 1.5rem;
+  }
 
 }
