@@ -1,90 +1,225 @@
-.container {
-  width: 100vw;
-  height: auto;
-  background: var(--light-bg);
-}
-
-.container h1 {
-  font-size: 5rem;
-  text-align: center;
-  padding-top: 5rem;
-}
-
-.con-card {
-  padding: 1rem;
-  width: 70vw;
-  height: auto;
-  margin: 0 auto;
-  transition: 0.5s ease-in-out;
-}
-
-.card{
+/* ------------------ Hero Section ------------------ */
+.hero-section {
+  position: relative;
+  min-height: 70vh;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  gap: 2rem;
-  margin: 1.5rem 0;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 64px;
 }
-.card .image{
-  width: 20rem;
-  aspect-ratio: 1;
-  border: 3px solid #eee;
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #059669 0%, #065f46 50%, #064e3b 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* ------------------ Profile Image Flip ------------------ */
+.profile-container {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2.5rem;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.profile-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.profile-container.flipped .profile-flip {
+  transform: rotateY(180deg);
+}
+
+.profile-front,
+.profile-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-front {
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  border: 4px solid #1f2937;
+  animation: float 3s ease-in-out infinite;
+}
+
+.profile-inner {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: #1f2937;
+  border: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-text {
+  font-size: 4.5rem;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #60a5fa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile-back {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: 4px solid #1f2937;
+  transform: rotateY(180deg);
   overflow: hidden;
 }
 
-.card .image img{
+.profile-back img {
   width: 100%;
-  height:100%;
+  height: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
-.card .overlay{
-  flex: 1 1 50rem;
-  position: relative;
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ------------------ Hero Text ------------------ */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #34d399, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.touch{
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-subtitle {
+  font-size: 1.75rem;
+  color: #e5e7eb;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #4b5563;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  border-radius: 9999px;
+}
+
+/* ------------------ Button ------------------ */
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid #059669;
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #047857;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3);
+}
+
+/* ------------------ Skills Section ------------------ */
+.skills-section {
+  min-height: 65vh;
+  padding: 5rem 1.5rem;
+  background: #064e3b;
+}
+
+.skills-title {
   font-size: 3rem;
-  background: rgba(0, 128, 128, 0.63);
-  padding: 2rem;
-  border-radius: 3rem 0 3rem 0;
-  border: 1.5px solid pink;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #a7f3d0;
 }
 
-
-
-@media (max-width: 780px) {
-
-  .con-card{
-    flex-direction: column;
-    gap: 2rem;
-    width: 85vw;
-    
-  }
-
-  .card{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .card img{
-    flex: 1 1 20rem;
-    border: 1px solid #eee;
-    border-radius: 50%;
-  }
-  .card .overlay{
-    flex: 1 1 50rem;
-    position: relative;
-    font-size: 1.9rem;
-  }
-  
+.skills-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
+.skill-card {
+  background: #065f46;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  color: #d1d5db;
+}
 
-@media (max-width: 580px) {
-  html{
-    font-size: 50%;
-  }
+.skill-card:hover {
+  background: #374151;
+  transform: translateY(-6px);
+}
 
-  .overlay{
-    font-size: 1.3rem;
-  }
+.skill-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.skill-card.frontend h3 { color: #c084fc; }
+.skill-card.backend h3 { color: #60a5fa; }
+.skill-card.tools h3 { color: #4ade80; }
+
+.skill-card ul {
+  list-style: none;
+}
+
+.skill-card li {
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 768px) {
+  .hero-title { font-size: 3rem; }
+  .hero-subtitle { font-size: 1.4rem; }
+  .profile-container { width: 180px; height: 180px; }
+  .profile-text { font-size: 3.2rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-subtitle { font-size: 1.25rem; }
+  .profile-container { width: 150px; height: 150px; }
+  .skills-title { font-size: 2.2rem; }
 }

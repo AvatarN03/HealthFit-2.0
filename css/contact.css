@@ -1,128 +1,269 @@
+:root {
+  --bg: #122b1e;
+  --tcc: #eafbea;
+  --accent: #4caf50;
+  --highlight: #ff8c00;
+}
+
+/* ------------------ Global & Form Layout ------------------ */
 ::placeholder {
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1.6rem;
+  color: #ccc;
+  padding: 0.5rem;
 }
 
 ::selection {
-  background-color: #4caf50;
+  background-color: var(--accent);
   color: white;
 }
 
 button {
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--bg);
-  color: var(--tcc);
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  background: var(--accent);
+  color: white;
   border-radius: 3rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
 }
 
 span {
   color: var(--tcc);
   font-weight: bold;
-  font-size: 2.9rem;
+  font-size: 3rem;
   transform: translate(30%, -50%);
   display: block;
 }
 
+/* ------------------ Form Section ------------------ */
 .flex {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 2rem;
-  width: 100vw;
-  height: 80vh;
-  background: var(--bg);
-
+  width: 100%;
+  background: linear-gradient(135deg, #1b3c2c, #4caf50);
+  color: white;
+  gap: 3rem;
 }
 
 .flex form {
-  flex: 1 1 50%;
-  padding: auto;
-  width: 100%;
-
-  background: rgba(38, 92, 38, 0.788);
-  padding: 2rem;
-  font-size: 2rem;
-  border-radius: 3rem;
-  border: 2px solid #eeeeee65;
+  width: 30%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 3rem;
+  font-size: 1.8rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
-dialog {
-  font-size: 1.5rem;
-  width: 50vw;
-  height: fit-content;
-  padding: 3rem;
-  margin: auto;
+.flex form:hover {
+  transform: scale(1.02);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  color: var(--tcc);
+  font-weight: 600;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0.8rem 0;
 }
+
+.form-group label {
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+}
+
 .form-group input,
 .form-group textarea {
-  font-size: 2.2rem;
-  color: #4caf50;
-  text-transform: capitalize;
+  font-size: 1.6rem;
+  color: #123;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border: none;
-  appearance: none;
-  border-radius: 5px;
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 10px var(--accent);
+  border: 2px solid var(--accent);
 }
 
 .form-group textarea {
-  width: 100%;
-  height: 20rem;
+  height: 14rem;
   resize: none;
 }
 
 .form-group input[type="submit"] {
-  background: rgb(214, 110, 13);
-  font-size: 3rem;
-  color: #123;
+  background: var(--highlight);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
   cursor: pointer;
-  margin-bottom: 0;
+  transition: 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+  background: #ff7b00;
+  transform: translateY(-3px);
 }
 
 .flex .image {
   flex: 0 0 35%;
-  height: 35%;
+  height: auto;
   margin: 0 1.5rem;
   border-radius: 2rem;
-  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0..5);
   overflow: hidden;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.4);
 }
 
 .flex .image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.flex .image img:hover {
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 780px) {
   .flex {
     flex-direction: column-reverse;
-    height: fit-content;
     padding: 2rem;
-    gap: 2rem;
   }
 
   .flex form {
-    flex: 1 1 85%;
-  }
-  .flex .image {
-    flex: 1 1 85%;
-    height: 50rem;
+    width: 90%;
   }
 
-  .flex .image img {
-    margin-left: 0;
-    height: 100%;
+  .flex .image {
+    width: 90%;
+    height: 25rem;
   }
 }
+/* ------------------ Feedback Dialog ------------------ */
+.feedback-dialog {
+  position: fixed; /* stay centered regardless of scroll */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 90%;
+  max-width: 480px;
+  padding: 2.5rem;
+  
+  border: none;
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, var(--accent), #1b3c2c);
+  color: var(--tcc);
+  font-size: 1.6rem;
+  text-align: center;
+  
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.35s ease forwards;
+  z-index: 1000;
+}
+
+/* Dialog Backdrop Effect */
+.feedback-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+/* Text Styling */
+.feedback-dialog h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  color: #ffeb3b;
+}
+
+.feedback-dialog span {
+  color: #ffeb3b;
+  font-weight: 700;
+  display: inline;
+  transform: none;
+  font-size: inherit;
+}
+
+.feedback-dialog p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Close Button */
+.feedback-dialog .close-btn {
+  background: var(--highlight);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feedback-dialog .close-btn:hover {
+  background: #ff7000;
+  transform: translateY(-2px);
+}
+
+/* ------------------ Animations ------------------ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 600px) {
+  .feedback-dialog {
+    width: 90%;
+    padding: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .feedback-dialog h2 {
+    font-size: 2rem;
+  }
+
+  .feedback-dialog .close-btn {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.6rem;
+  }
+}
+

@@ -1,35 +1,44 @@
-const form = document.querySelector('form');
+const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const getData = new FormData(form);
+  e.preventDefault();
 
-    const data = {};
-    getData.forEach((value, key) => {
-        data[key] = value;
-    });
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+  console.log(JSON.stringify(data));
 
-    console.log(JSON.stringify(data));
+  // Create dialog
+  const dialog = document.createElement("dialog");
+  dialog.classList.add("feedback-dialog");
+  dialog.innerHTML = `
+    <div class="dialog-content">
+      <h2>Thank You, <span>${data.name || "User"}</span>!</h2>
+      <p>
+        We truly appreciate your feedback and the time you took to reach out to us. 
+        Our team will carefully review your message and contact you if more details are needed.
+      </p>
+      <p>Stay healthy and fit with <b>HealthFit</b> 💪</p>
+    </div>
+  `;
 
-    const hey = document.createElement("dialog");
-    hey.innerHTML = `
-    <p>Dear <span> ${data.name},</span></p><br>
-    <p>Thank you for using our service. We appreciate your feedback and will review it carefully. Our team will reach out to you if further information is needed.</p><br>
-    <p>Thank you once again for your valuable input!</p><br>
-    <p>Best regards,<br>Your <span>Health-Fit<span></p><br><br>
-`;
+  // Create close button
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "Close";
+  closeButton.classList.add("close-btn");
 
-    hey.style.backgroundColor = "purple";
-    
-    const closeButton = document.createElement("button");
-    closeButton.textContent = "Close";
-    closeButton.addEventListener("click", () => {
-        hey.close(); 
-        form.reset();
-    });
+  closeButton.addEventListener("click", () => {
+    dialog.classList.add("fade-out");
+    setTimeout(() => {
+      dialog.close();
+      dialog.remove();
+      form.reset();
+    }, 300); // match animation duration
+  });
 
-    hey.appendChild(closeButton);
-    document.body.appendChild(hey);
-    
-    hey.showModal(); // Show the dialog
+  dialog.querySelector(".dialog-content").appendChild(closeButton);
+  document.body.appendChild(dialog);
+
+  // Open with animation
+  dialog.showModal();
+  dialog.classList.add("fade-in");
 });
