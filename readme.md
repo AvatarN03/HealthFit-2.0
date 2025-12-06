@@ -99,15 +99,4 @@ Open source, MIT License. Use, share, and adapt for non-commercial purposes.
 
 *This project is a great starting point for students or teams looking to build their own health, wellness, or productivity platforms in pure HTML/CSS/JS*.
 
-<div align="center">⁂</div>
-
-[^1]: index.html
-
-[^2]: yoga.html
-
-[^3]: mediation.html
-
-[^4]: bmi.html
-
-[^5]: contact.html
 
